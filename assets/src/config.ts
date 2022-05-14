@@ -1,4 +1,4 @@
-//
+﻿//Jacqui McPherson: 1547318
 export default {
   apiGateway: {
     REGION: "us-east-1",

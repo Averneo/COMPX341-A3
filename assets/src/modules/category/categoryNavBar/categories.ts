@@ -1,4 +1,4 @@
-//
+﻿//Jacqui McPherson: 1547318
 export const categories = {
   cooks: "Cookbooks",
   database: "Database",
