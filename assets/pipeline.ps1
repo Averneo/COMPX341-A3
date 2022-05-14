@@ -10,8 +10,10 @@ if (Select-String -Path "build_output.txt" -Pattern "Failed to compile." -Quiet)
 else 
 {
     Write-Output "Compile successful! App will be pushed to GitHub and deployed."
+    Set-Location ..
     git add .
-    git commit -m "Pipeline is working"
+    git commit -m "Pipeline is working v2"
     git push origin main
+    Set-Location assets
     npm run start
 }

@@ -10,7 +10,7 @@ interface BestSellersProps {}
 interface BestSellersState {
   isLoading: boolean;
   books: { bookId: any; }[];
-}
+} 
 
 export default class BestSellers extends React.Component<BestSellersProps, BestSellersState> {
   constructor(props: BestSellersProps) {
