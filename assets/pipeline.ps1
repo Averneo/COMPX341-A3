@@ -9,11 +9,18 @@ if (Select-String -Path "build_output.txt" -Pattern "Failed to compile." -Quiet)
 #Else if the build compiles successfully
 else 
 {
-    Write-Output "Compile successful! App will be pushed to GitHub and deployed."
-    Set-Location ..
-    git add .
-    git commit -m "Pipeline is working v2"
-    git push origin main
-    Set-Location assets
-    npm run start
+    #Check if a commit message has been supplied
+    if ($null -eq $args[0]){
+        Write-Output "No commit message supplied. Application will not be committed."
+    }
+    else
+    {
+        Write-Output "Compile successful! App will be pushed to GitHub and deployed."
+        Set-Location ..
+        git add .
+        git commit -m $args[0]
+        git push origin main
+        Set-Location assets
+        npm run start
+    }
 }
